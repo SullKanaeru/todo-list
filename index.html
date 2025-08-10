@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDO List Application</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo-section-header">
+        <div class="top-content">
+          <h1>TO DO | Your List</h1>
+          <button
+            class="add-new-task-button"
+            type="button"
+            onclick="showAddNewTaskModal()"
+          >
+            <i class="fa-solid fa-circle-plus"></i> Add New List
+          </button>
+        </div>
+        <div class="bottom-line"></div>
+      </div>
+      <div class="todo-list-wrapper">
+        <div class="todo-section">
+          <p class="todo-section-title">Overdue</p>
+          <div class="todo-list"></div>
+        </div>
+        <div class="todo-section">
+          <p class="todo-section-title">Due Today</p>
+          <div class="todo-list"></div>
+        </div>
+        <div class="todo-section">
+          <p class="todo-section-title">Upcoming</p>
+          <div class="todo-list"></div>
+        </div>
+        <div class="todo-section">
+          <p class="todo-section-title complete-section">Complete</p>
+          <div class="todo-list"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for input new task -->
+    <div class="add-new-task-modal">
+      <div class="modal-overlay" onclick="hideAddNewTaskModal()"></div>
+      <div class="modal-content">
+        <button
+          type="button"
+          class="close-modal"
+          onclick="hideAddNewTaskModal()"
+          aria-label="Close"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Add New Task</h2>
+        <form id="add-task-form">
+          <div class="form-group">
+            <label for="task-title">Task Title:</label>
+            <textarea id="task-title" name="task-title" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="task-date">Due Date:</label>
+            <input type="date" id="task-date" name="task-date" required />
+          </div>
+          <div class="form-group">
+            <label for="category">Category:</label>
+            <select name="category" id="category">
+              <option value="low">Low</option>  
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-task">Add New Task</button>
+        </form>
+      </div>
+    </div>
+    <script src="../js/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5b7ca8a8fb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  </body>
+</html>
